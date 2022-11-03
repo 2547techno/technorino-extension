@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Technorino Extension",
+    "description": "Extension for Chatterino Fork, Technorino",
+    "version": "1.0",
+    "permissions": [
+        "tabs",
+        "nativeMessaging"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "index.html"
+    }
+  }
