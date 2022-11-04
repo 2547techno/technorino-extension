@@ -12,6 +12,8 @@ const IGNORED = [
     'prime'
 ]
 
+let interval
+
 chrome.tabs.onActivated.addListener(e => {
     updateWatching()
 })
@@ -37,8 +39,12 @@ async function updateWatching() {
     url = active.url
 
     const match = url.match(REGEX)
-    if(!match) return;
+    if(!match) {
+        stopPing();
+        return
+    }
     if(IGNORED.includes(match[1].toLowerCase())) return;
+    startPing();
 
     sendNativeMessage({
         action: "attach",
@@ -53,6 +59,19 @@ function detach() {
             data: null
         }
     )
+}
+
+function startPing() {
+    interval = setInterval(() => {
+        sendNativeMessage({
+            action: "ping",
+            data: null
+        })
+    }, 3000);
+}
+
+function stopPing() {
+    clearInterval(interval)
 }
 
 function sendNativeMessage(message) {
