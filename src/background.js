@@ -9,7 +9,8 @@ const IGNORED = [
     'friends',
     'directory',
     'videos',
-    'prime'
+    'prime',
+    'search'
 ]
 
 let interval
