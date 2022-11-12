@@ -13,7 +13,7 @@ const IGNORED = [
     'search'
 ]
 
-let interval
+let interval = null;
 
 chrome.tabs.onActivated.addListener(e => {
     updateWatching()
@@ -63,6 +63,7 @@ function detach() {
 }
 
 function startPing() {
+    if (interval) return;
     interval = setInterval(() => {
         sendNativeMessage({
             action: "ping",
@@ -73,6 +74,7 @@ function startPing() {
 
 function stopPing() {
     clearInterval(interval)
+    interval = null;
 }
 
 function sendNativeMessage(message) {
