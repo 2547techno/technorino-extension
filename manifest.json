@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Technorino Extension",
     "description": "Extension for Chatterino fork, Technorino",
-    "version": "1.1",
+    "version": "1.1.1",
     "permissions": [
         "tabs",
         "nativeMessaging"
