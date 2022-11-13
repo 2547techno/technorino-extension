@@ -6,9 +6,10 @@
   "scripts": {
     "build:v2": "sh scripts/build_v2.sh",
     "build:v3": "sh scripts/build_v3.sh",
-    "web-ext:firefox": "web-ext run -t firefox-desktop",
-    "web-ext:chrome": "web-ext run -t chromium",
-    "t": "sh t.sh"
+    "web-ext:firefox": "web-ext run -t firefox-desktop -s out/v2",
+    "web-ext:chrome": "web-ext run -t chromium -s out/v3",
+    "firefox": "npm run build:v2 && npm run web-ext:firefox",
+    "chrome": "npm run build:v3 && npm run web-ext:chrome"
   },
   "repository": {
     "type": "git",
