@@ -4,9 +4,11 @@
   "description": "",
   "main": "background.js",
   "scripts": {
-    "build": "sh build.sh",
+    "build:v2": "sh scripts/build_v2.sh",
+    "build:v3": "sh scripts/build_v3.sh",
     "web-ext:firefox": "web-ext run -t firefox-desktop",
-    "web-ext:chrome": "web-ext run -t chromium"
+    "web-ext:chrome": "web-ext run -t chromium",
+    "t": "sh t.sh"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
   "homepage": "https://github.com/2547techno/technorino-extension#readme",
   "devDependencies": {
     "chrome-types": "^0.1.144",
+    "json": "^11.0.0",
     "web-ext": "^7.3.1"
   }
 }
