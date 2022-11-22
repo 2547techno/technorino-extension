@@ -1,3 +1,7 @@
+## Features
+- Auto detach from "watching" tab after ~10s of switching to a non-stream tab/closed browser (toggleable, off by default)
+- Mute watching tab "live" ping sound  (toggleable, muted by default)
+
 ## Install
 
 - Install dependencies (just cli tools): 
